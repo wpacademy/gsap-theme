@@ -1,0 +1,125 @@
+/**
+Theme Name: GSAP Theme
+Author: Mian Shahzad Raza
+Author URI: https://msrbuilds.com/
+Description: Astra is the fastest, fully customizable & beautiful theme suitable for blogs, personal portfolios and business websites. It is very lightweight (less than 50KB on frontend) and offers unparalleled speed. Built with SEO in mind, Astra comes with schema.org code integrated so search engines will love your site. Astra offers plenty of sidebar options and widget areas giving you a full control for customizations. Furthermore, we have included special features and templates so feel free to choose any of your favorite page builder plugin to create pages flexibly. Some of the other features: # WooCommerce Ready # Responsive # Compatible with major plugins # Translation Ready # Extendible with premium addons # Regularly updated # Designed, Developed, Maintained & Supported by Brainstorm Force. Looking for a perfect base theme? No further. Astra is fast, fully customizable and beautiful theme!
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gsap-theme
+*/
+.center-xy {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 600px;
+}
+
+.container {
+  width: 100%;
+}
+
+.copy-container {
+  text-align: center;
+}
+
+p {
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.handle {
+  background: #ffe500;
+  width: 14px;
+  height: 30px;
+  top: 5px;
+  left: 0;
+  margin-top: 1px;
+  position: absolute;
+}
+
+#cb-replay {
+  fill: #666;
+  width: 20px;
+  margin: 15px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  overflow: inherit;
+  cursor: pointer;
+}
+
+#cb-replay:hover {
+  fill: #888;
+}
+
+/* Image Border Animation (Rotating Light) */
+.img-border-wrap,
+.img-border-hover {
+  position: relative;
+  padding: 3px;
+  /* Border thickness */
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+  /* Dark base */
+}
+
+.img-border-wrap img,
+.img-border-hover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.animated-border-overlay {
+  position: absolute;
+  inset: 0px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.animated-border {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      transparent 60deg,
+      #ffe500 90deg,
+      rgba(255, 229, 0, 0.4) 120deg,
+      transparent 150deg,
+      transparent 360deg);
+  animation: rotateBorder 4s linear infinite;
+  opacity: 0;
+  /* Start hidden for GSAP to fade in */
+}
+
+/* Hover variant specific rules */
+.img-border-hover .animated-border {
+  animation-play-state: paused;
+}
+
+.img-border-hover:hover .animated-border {
+  animation-play-state: running;
+}
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
